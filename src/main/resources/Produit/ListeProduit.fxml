@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="724.0" prefWidth="1219.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Produit.ListeProduitController">
+   <children>
+      <BorderPane layoutY="1.0" prefHeight="816.0" prefWidth="459.0" stylesheets="@../../../value/style.css" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="856.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="722.0" prefWidth="478.0" styleClass="right-bar" stylesheets="@../../../value/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="5.0" prefHeight="110.0" prefWidth="432.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="50.0" prefWidth="378.0" text="Produit Artisanale" textFill="#878787">
+                           <font>
+                              <Font name="Cambria Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="rechpan" layoutX="7.0" layoutY="77.0" prefHeight="66.0" prefWidth="374.0" stylesheets="@../../../value/style.css">
+                           <padding>
+                              <Insets left="30.0" right="30.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="barrerecherche" alignment="CENTER" layoutY="13.0" prefHeight="40.0" prefWidth="198.0" promptText="Type Here To Search" styleClass="transparent" stylesheets="@../../../value/style.css">
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="search" layoutX="229.0" layoutY="17.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="126.0" styleClass="search-button" stylesheets="@../../../value/style.css" text="Search" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.rightAnchor="1.0" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="search-box" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="27.0" layoutY="157.0" prefHeight="558.0" prefWidth="384.0" stylesheets="@../../../value/style.css">
+                     <children>
+                        <ImageView fx:id="imageaffp" fitHeight="300.0" fitWidth="301.0" layoutX="42.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/bouteuille-ceramique.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="nompAf" layoutX="14.0" layoutY="24.0" prefHeight="66.0" prefWidth="178.0" text="Bottle" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="prixpAf" layoutX="273.0" layoutY="34.0" prefHeight="55.0" prefWidth="110.0" text="9.95$" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="386.0" prefHeight="47.0" prefWidth="198.0" text="Quantity" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="ajoutpanier" layoutX="87.0" layoutY="460.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="210.0" styleClass="add-btn" stylesheets="@../../../value/style.css" text="Add to cart" textFill="#00000098">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="qteproduit" layoutX="287.0" layoutY="397.0" prefHeight="30.0" prefWidth="56.0" styleClass="comboBox" stylesheets="@../../../value/style.css" text="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="plusqte" layoutX="358.0" layoutY="398.0" mnemonicParsing="false" text="+">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="moinsqte" layoutX="242.0" layoutY="397.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+      <AnchorPane layoutX="438.0" prefHeight="725.0" prefWidth="855.0">
+         <children>
+            <AnchorPane prefHeight="73.0" prefWidth="855.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="7.0" prefHeight="46.0" prefWidth="82.0" text="Language" textFill="#878787">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="107.0" layoutY="7.0" prefHeight="46.0" prefWidth="74.0" text="English" textFill="#878787" underline="true">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="compte" layoutX="708.0" layoutY="7.0" prefHeight="46.0" prefWidth="93.0" text="My Account" textFill="#878787">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="showpanier" fitHeight="39.0" fitWidth="45.0" layoutX="802.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/ic_cart.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="74.0" prefHeight="82.0" prefWidth="855.0">
+               <children>
+                  <AnchorPane layoutX="41.0" prefHeight="74.0" prefWidth="278.0" styleClass="free-delivery-card" stylesheets="@../../../value/style.css">
+                     <children>
+                        <Label layoutX="28.0" layoutY="11.0" prefHeight="23.0" prefWidth="115.0" text="Free Delevery" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="64.0" fitWidth="131.0" layoutX="182.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_delivery.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="28.0" layoutY="34.0" prefHeight="23.0" prefWidth="130.0" text="over 99$ order" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="539.0" prefHeight="74.0" prefWidth="284.0" styleClass="shopping-online-card" stylesheets="@../../../value/style.css">
+                     <children>
+                        <Label layoutX="28.0" layoutY="11.0" prefHeight="23.0" prefWidth="147.0" text="Shopping on ligne" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="56.0" fitWidth="64.0" layoutX="218.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/ic_stopwatch.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="28.0" layoutY="34.0" prefHeight="23.0" prefWidth="170.0" text="get your shopping in same day" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="scroll" layoutX="42.0" layoutY="203.0" prefHeight="439.0" prefWidth="782.0">
+              <content>
+                <AnchorPane fx:id="tab_affichage" minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="758.0" />
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

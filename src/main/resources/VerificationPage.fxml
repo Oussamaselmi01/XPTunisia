@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="744.0" prefWidth="946.0" stylesheets="@StyleVerif.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.User.VerificationPage">
+   <children>
+      <TableView fx:id="panierTableView" layoutX="146.0" layoutY="118.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="627.0" style="-fx-background-radius: 11;">
+         <columns>
+            <TableColumn fx:id="User" prefWidth="436.0" text="User" />
+            <TableColumn fx:id="Confirmation" minWidth="-Infinity" prefWidth="190.0" resizable="false" text="Confimation" />
+            
+         </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
+      <Button fx:id="DeleteVerification" layoutX="529.0" layoutY="655.0" onAction="#DeleteVerification" text="Delete" />
+      <Text fx:id="title" layoutX="37.0" layoutY="71.0" styleClass="title" text="Verification Management" />
+      <Pane layoutX="35.0" layoutY="79.0" styleClass="title-decoration-top" />
+      <Pane layoutX="436.0" layoutY="35.0" styleClass="title-decoration-bottom" />
+      <Button fx:id="Back" layoutX="640.0" layoutY="38.0" onAction="#back" styleClass="back" text="Back" />
+      <Button layoutX="333.0" layoutY="655.0" onAction="#Confirme" styleClass="back" text="Confirm" />
+   </children>
+</AnchorPane>

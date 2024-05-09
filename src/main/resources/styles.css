@@ -1,0 +1,49 @@
+/* Style pour l'arrière-plan de la page */
+.anchor-pane {
+    -fx-background-color: #f2f2f2; /* Couleur de fond */
+}
+
+/* Style pour le tableau des établissements */
+.table-view {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+}
+
+/* Style pour les colonnes du tableau */
+.table-column {
+    -fx-alignment: CENTER; /* Alignement du texte au centre */
+}
+.root {
+
+    -fx-background-size: cover;
+}
+/* Style pour les détails de l'établissement */
+.grid-pane {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+    -fx-padding: 10px; /* Espacement interne */
+}
+
+/* Style pour les labels des détails de l'établissement */
+.label {
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+}
+
+/* Style pour les boutons */
+.button {
+    -fx-background-color: #4CAF50; /* Couleur de fond */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+}
+
+/* Style pour le bouton "Comment" */
+#openAddCommentForm {
+    -fx-background-color: #FFA500; /* Couleur de fond orange */
+    -fx-text-fill: white; /* Couleur du texte */
+}
+
+/* Style pour le bouton "Delete Comment" */
+#handleDeleteComment {
+    -fx-background-color: #FF0000; /* Couleur de fond rouge */
+    -fx-text-fill: white; /* Couleur du texte */
+}

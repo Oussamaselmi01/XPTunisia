@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.Integer?>
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Etablissement.AddCommentaireController">
+    <children>
+        <Label fx:id="labelTitle" text="Commenter pour '/Nom d'établissement/'"/>
+        <TextArea fx:id="commentTextArea" promptText="Enter your comment here..." prefHeight="100.0"/>
+        <HBox fx:id="starBox" alignment="CENTER"/>
+        <Button text="Submit" onAction="#handleSubmitComment"/>
+    </children>
+</VBox>
+

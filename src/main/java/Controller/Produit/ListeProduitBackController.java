@@ -1,0 +1,286 @@
+package Controller.Produit;
+
+import Services.Produit.ProduitService;
+import Entities.Produit.Produit;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+public class ListeProduitBackController {
+
+
+
+    @FXML
+    private Button ButtonAccueil;
+
+    @FXML
+    private Button ButtonAjouterP;
+
+    @FXML
+    private Button ButtonListeP;
+
+    @FXML
+    private Button ButtonListeV;
+
+    @FXML
+    private Button ButtonModifierP;
+
+    @FXML
+    private Button ButtonModifierV;
+
+    @FXML
+    private TableView<?> TableProduit;
+
+    @FXML
+    private TableColumn<?, ?> DP;
+
+    @FXML
+    private TableColumn<?, ?> DateP;
+
+    @FXML
+    private TableColumn<?, ?> IP;
+
+    @FXML
+    private TableColumn<?, ?> NP;
+
+    @FXML
+    private TableColumn<?, ?> PP;
+
+    @FXML
+    private TableColumn<?, ?> RP;
+
+    @FXML
+    private TableColumn<?, ?> SP;
+
+    @FXML
+    private TableColumn<Produit, Void> SuppressionP;
+
+    @FXML
+    private TableColumn<Produit, Void> ModificationP;
+
+    ProduitService ps = new ProduitService();
+    List<Produit> PList;
+
+    public void initialize() throws IOException {
+        // Initialiser le ComboBox avec des données
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "confirmée",
+                "annulée"
+        );
+        ShowProduit();
+        configureSuppressionColumn();
+        configureModificationColumn();
+        //showNotification();
+    }
+
+    public void ShowProduit() throws IOException {
+
+        PList = ps.readall();
+        List<Produit> filtredPList = new ArrayList<>();
+        NP.setCellValueFactory(new PropertyValueFactory<>("id"));
+        PP.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        DateP.setCellValueFactory(new PropertyValueFactory<>("utilisateur_id"));
+        SP.setCellValueFactory(new PropertyValueFactory<>("description"));
+        DP.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        //IP.setCellValueFactory(new PropertyValueFactory<>("date-livraison"));
+        if (TableProduit != null && TableProduit instanceof TableView) {
+            // Cast ticket_tableview to TableView<Ticket> and set its items
+            ((TableView<Produit>) TableProduit).setItems(FXCollections.observableArrayList(PList));
+        }
+    }
+
+    private void configureModificationColumn() {
+        ModificationP.setCellFactory(param -> new TableCell<>() {
+            private final Button boutonModifier = new Button("Modifier");
+
+            {
+                boutonModifier.setOnAction(event -> {
+                    Produit produit = getTableView().getItems().get(getIndex());
+                    System.out.println("Modifier : " + produit.getNom());
+
+                    // Créer une nouvelle fenêtre (Stage)
+                    Stage nouvelleFenetre = new Stage();
+
+                    // Créer un FXMLLoader pour charger la nouvelle scène depuis le fichier FXML
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/ModifierProduit.fxml"));
+
+                    try {
+                        Parent root = loader.load();
+                        // Obtenir le contrôleur de la nouvelle scène
+                        ModifierProduitController modifierProduitController = loader.getController();
+
+                        // Transmettre l'id de la vente au contrôleur de la nouvelle scène
+                        modifierProduitController.setProduitId(produit.getId());
+
+                        Scene nouvelleScene = new Scene(root);
+                        nouvelleFenetre.setScene(nouvelleScene);
+                        nouvelleFenetre.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    // Rafraîchir la TableView si nécessaire
+                    TableProduit.refresh();
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : boutonModifier);
+            }
+        });
+    }
+
+
+
+    private void configureSuppressionColumn() {
+        SuppressionP.setCellFactory(param -> new TableCell<>() {
+            private final Button boutonSupprimer = new Button("Supprimer");
+            {
+                boutonSupprimer.setOnAction(event -> {
+                    Produit produit = getTableView().getItems().get(getIndex());
+                    // Ici, vous pouvez appeler votre méthode de suppression
+                    // en utilisant les données du produit.
+                    ps.delete(produit);
+                    System.out.println("Supprimer : " + produit.getId());
+                    TableProduit.refresh();
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/ListeProduitBack.fxml"));
+                        Parent root = loader.load();
+                        // Obtenir le contrôleur de la nouvelle interface
+                        ListeProduitBackController listeProduitBackController = loader.getController();
+
+                        // Créer une nouvelle scène
+                        Scene scene = new Scene(root);
+
+                        // Configurer la nouvelle scène dans une nouvelle fenêtre
+                        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.setScene(scene);
+
+                        // Afficher la nouvelle fenêtre
+                        stage.show();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : boutonSupprimer);
+            }
+        });
+    }
+
+
+
+    private String getFileNameFromPath(String filePath) {
+        // Split the path based on the '/' character
+        String[] pathParts = filePath.split("/");
+
+        // Get the last part of the path (file name)
+        return pathParts[pathParts.length - 1];
+    }
+
+
+
+
+    @FXML
+    public void listP(ActionEvent actionEvent)  throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/ListeProduitBack.fxml"));
+        Parent root = loader.load();
+
+        // Créer une nouvelle scène
+        Scene scene = new Scene(root);
+
+        // Configurer la nouvelle scène dans une nouvelle fenêtre
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Produit");
+
+        // Afficher la nouvelle fenêtre
+        stage.show();
+    }
+
+    @FXML
+    public void listV(ActionEvent actionEvent) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/ListeProduitBack.fxml"));
+        Parent root = loader.load();
+
+        // Créer une nouvelle scène
+        Scene scene = new Scene(root);
+
+        // Configurer la nouvelle scène dans une nouvelle fenêtre
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Vente");
+
+        // Afficher la nouvelle fenêtre
+        stage.show();
+    }
+    @FXML
+    public void Home(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/DashboardBack.fxml"));
+        Parent root = loader.load();
+
+        // Créer une nouvelle scène
+        Scene scene = new Scene(root);
+
+        // Configurer la nouvelle scène dans une nouvelle fenêtre
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Dashboard");
+
+        // Afficher la nouvelle fenêtre
+        stage.show();
+    }
+
+    @FXML
+    public void ajP(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/AjouterProduit.fxml"));
+        Parent root = loader.load();
+
+        // Créer une nouvelle scène
+        Scene scene = new Scene(root);
+
+        // Configurer la nouvelle scène dans une nouvelle fenêtre
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Dashboard");
+
+        // Afficher la nouvelle fenêtre
+        stage.show();
+    }
+
+    @FXML
+    public void showStatP(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Produit/StatBuvette.fxml"));
+        Parent root = loader.load();
+
+        // Créer une nouvelle scène
+        Scene scene = new Scene(root);
+
+        // Configurer la nouvelle scène dans une nouvelle fenêtre
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Dashboard");
+
+        // Afficher la nouvelle fenêtre
+        stage.show();
+    }
+}

@@ -1,0 +1,95 @@
+.button
+{
+-fx-background-color : #007bff;
+-fx-text-fill : black;
+}
+.button:hover{
+-fx-background-color : #10165F;
+}
+.button:pressed
+{
+-fx-background-color : #1620A1;
+}
+
+.scroll-pane {
+    -fx-background-color: white;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: white;
+}
+/* Style pour l'arrière-plan de la page */
+.anchor-pane {
+    -fx-background-color: #f2f2f2; /* Couleur de fond */
+}
+
+/* Style pour le tableau des établissements */
+.table-view {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+}
+
+/* Style pour les colonnes du tableau */
+.table-column {
+    -fx-alignment: CENTER; /* Alignement du texte au centre */
+}
+.root {
+
+    -fx-background-size: cover;
+}
+/* Style pour les détails de l'établissement */
+.grid-pane {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+    -fx-padding: 10px; /* Espacement interne */
+}
+
+/* Style pour les labels des détails de l'établissement */
+.label {
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+}
+
+/* Style pour les boutons */
+.button {
+    -fx-background-color: #42A9E6; /* Couleur de fond */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-size: 16px; /* Taille de la police */
+    -fx-font-weight: bold; /* Gras */
+    -fx-border-color: white; /* Couleur de la bordure */
+    -fx-border-width: 1px; /* Largeur de la bordure */
+}
+
+
+/* Style pour le bouton "Comment" */
+#openAddCommentForm {
+    -fx-background-color: #FFA500; /* Couleur de fond orange */
+    -fx-text-fill: white; /* Couleur du texte */
+}
+
+/* Style pour le bouton "Delete Comment" */
+#handleDeleteComment {
+    -fx-background-color: #FF0000; /* Couleur de fond rouge */
+    -fx-text-fill: white; /* Couleur du texte */
+}
+

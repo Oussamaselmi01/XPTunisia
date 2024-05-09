@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Offre.Offre.FrontOffresController">
+
+    <!-- Ajout de l'image de fond -->
+    <ImageView fitHeight="500.0" fitWidth="1000.0">
+        <Image url="file:\C:/Users/Oussama/IdeaProjects/XpUser/src/main/images/55.jpg" />
+    </ImageView>
+
+
+    <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="204.0" layoutY="102.0" opacity="0.8" prefHeight="368.0" prefWidth="526.0">
+        <content>
+            <VBox fx:id="vBox" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #03b4fa;" />
+        </content>
+    </ScrollPane>
+
+
+
+</AnchorPane>

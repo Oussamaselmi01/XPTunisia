@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="160.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Reclamation.SideBar">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="160.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Capture_d_écran_2024-04-25_070020-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnrecla" layoutY="128.0" mnemonicParsing="false" onAction="#gotreclamtions" prefHeight="58.0" prefWidth="160.0" style="-fx-background-color: transparent;" text="Reclamtions" textFill="#6e6b6b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Offre.Offre.IndexOffreController">
+
+   <ImageView fitHeight="500" fitWidth="1000">
+      <Image url="@255.jpg" />
+   </ImageView>
+   <TextField fx:id="filterField" layoutX="38.0" layoutY="82.0" onKeyReleased="#handleSearch" opacity="0.8" promptText="Rechercher" />
+
+
+
+   <VBox prefWidth="1000.0" spacing="10.0" />
+   <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="38.0" layoutY="115.0" opacity="0.8" prefHeight="284.0" prefWidth="898.0">
+      <content>
+         <TableView fx:id="tableView" layoutX="10" layoutY="10" opacity="0.8" prefHeight="282.0" prefWidth="927.0">
+            <columns>
+               <TableColumn fx:id="nomColumn" prefWidth="100" text="Nom" />
+               <TableColumn fx:id="descriptionColumn" prefWidth="200.0" text="Description" />
+               <TableColumn fx:id="conditionColumn" prefWidth="170.0" text="Condition" />
+               <TableColumn fx:id="dateDebutColumn" text="Date Début" />
+               <TableColumn fx:id="dateFinColumn" text="Date Fin" />
+               <TableColumn fx:id="typeColumn" prefWidth="90.0" text="Type" />
+               <TableColumn fx:id="nbPlacesColumn" prefWidth="100" text="Nombre de places" />
+               <TableColumn fx:id="updateColumn" prefWidth="90.0" text="Modifier" />
+               <TableColumn fx:id="deleteColumn" prefWidth="90.0" text="Supprimer" />
+            </columns>
+         </TableView>
+      </content>
+   </ScrollPane>
+   <Button layoutX="588.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAddOffre" prefHeight="54.0" prefWidth="175.0" style="-fx-background-color: #03b4fa;" text="Ajouter Offre" textFill="#0c0066">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+   <Button layoutX="776.0" layoutY="422.0" mnemonicParsing="false" onAction="#shareCurrentOffre" prefHeight="54.0" prefWidth="175.0" style="-fx-background-color: #03b4fa;" text="Partager Offre" textFill="#0c0066">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+
+   <Button layoutX="726.0" layoutY="20.0" onAction="#navigateToTypes" prefHeight="47.0" prefWidth="98.0" style="-fx-background-color: #071aef;" text="Types offres" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button layoutX="839.0" layoutY="20.0" onAction="#navigateToOffres" prefHeight="47.0" prefWidth="98.0" style="-fx-background-color: #071aef;" text="Offres" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Button>
+   <Button layoutX="38.0" layoutY="422.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="175.0" style="-fx-background-color: #03b4fa;" text="Back" textFill="#0c0066">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font>
+   </Button>
+
+</AnchorPane>

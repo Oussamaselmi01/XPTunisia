@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="586.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Activite.AfficherActiviteFront">
+   <children>
+      <ImageView fitHeight="554.0" fitWidth="867.0" layoutX="80.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" scaleX="1.2" scaleY="1.02">
+         <image>
+            <Image url="file:\C:/Users/Oussama/IdeaProjects/XpUser/src/main/images/55.jpg" />
+         </image>
+      </ImageView>
+
+      <ScrollPane layoutX="98.0" layoutY="147.0" prefHeight="380.0" prefWidth="757.0">
+         <content>
+            <VBox fx:id="actionsContainer" spacing="10" />
+         </content>
+      </ScrollPane>
+      <Text fx:id="labellistactivites" layoutX="437.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activities list" wrappingWidth="156.392578125">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <TextField layoutX="108.0" layoutY="114.0" opacity="0.5" prefHeight="30.0" prefWidth="222.0" promptText="Search Drive" style="-fx-background-color: transparent; -fx-border-radius: 50px; -fx-border-color: #AEB2C3;" text="Search Activites">
+         <font>
+            <Font name="Berlin Sans FB" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow color="#b9b6b6" />
+         </effect>
+      </TextField>
+      <Button layoutX="882.0" layoutY="32.0" mnemonicParsing="false" onAction="#FR" prefHeight="36.0" prefWidth="64.0" text="FR" />
+      <Button layoutX="954.0" layoutY="32.0" mnemonicParsing="false" onAction="#EN" prefHeight="36.0" prefWidth="64.0" text="EN" />
+      <Button layoutX="27.0" layoutY="29.0" mnemonicParsing="false" onAction="#goToDash" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: blue;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

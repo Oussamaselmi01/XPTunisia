@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="590.0" prefWidth="915.0" stylesheets="@css/stylesheet.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Activite.Home">
+   <children>
+      <AnchorPane id="pane" fx:id="pane" layoutY="84.0" prefHeight="506.0" prefWidth="240.0" styleClass="sidebar">
+         <children>
+            <Button fx:id="actid" alignment="BASELINE_LEFT" layoutX="41.0" layoutY="119.0" mnemonicParsing="false" onAction="#naviguer1" prefHeight="41.0" prefWidth="200.0" text="Activites">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="catid" alignment="BASELINE_LEFT" layoutX="41.0" layoutY="172.0" mnemonicParsing="false" onAction="#naviguer2" prefHeight="41.0" prefWidth="200.0" text="Catergories">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="50.0" layoutY="431.0" mnemonicParsing="false" onAction="#naviguer3" prefHeight="41.0" prefWidth="191.0" text="Front">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="50.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/rapport-dactivite.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="50.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/categories.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="60.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/icons8-front-end-64.png" />
+               </image>
+            </ImageView>
+            <Button alignment="BASELINE_LEFT" layoutX="41.0" layoutY="304.0" mnemonicParsing="false" onAction="#goToDash" prefHeight="41.0" prefWidth="200.0" text="Dashboard">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+         <stylesheets>
+            <URL value="@css/stylesheet.css" />
+            <URL value="@css/stylesheet.css" />
+         </stylesheets>
+      </AnchorPane>
+      <ImageView fitHeight="112.0" fitWidth="140.0" layoutX="33.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/logoo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="label1" alignment="CENTER" layoutX="297.0" layoutY="122.0" text="mes Activites" textFill="#2262c6">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" alignment="CENTER" layoutX="297.0" layoutY="172.0" text="meilleure activité" textFill="#545352">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="297.0" layoutY="206.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="99.0" layoutX="27.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/98%20(1).jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="Visite guidée à vélo" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="505.0" layoutY="207.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="105.0" layoutX="27.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/98%20(2).jpg.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="EL jem tour" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="712.0" layoutY="207.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="95.0" layoutX="27.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/act2.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="quad tour" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField layoutX="436.0" layoutY="30.0" opacity="0.5" prefHeight="30.0" prefWidth="222.0" promptText="Search Drive" style="-fx-background-color: transparent; -fx-border-radius: 50px; -fx-border-color: #AEB2C3;" text="Search Activites">
+         <font>
+            <Font name="Berlin Sans FB" size="13.0" />
+         </font>
+         <effect>
+            <DropShadow color="#b9b6b6" />
+         </effect>
+      </TextField>
+      <Button layoutX="816.0" layoutY="30.0" mnemonicParsing="false" onAction="#FR" prefHeight="25.0" prefWidth="35.0" text="FR" />
+      <Button layoutX="858.0" layoutY="30.0" mnemonicParsing="false" onAction="#EN" prefHeight="25.0" prefWidth="35.0" text="EN" />
+      <AnchorPane layoutX="297.0" layoutY="351.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="99.0" layoutX="27.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/98%20(1).jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="Visite guidée à vélo" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="505.0" layoutY="352.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="105.0" layoutX="27.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/98%20(2).jpg.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="EL jem tour" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="712.0" layoutY="352.0" prefHeight="120.0" prefWidth="191.0" style="-fx-border-radius: 0px 50px 0px 0px; -fx-border-color: #F1F2F7;">
+         <effect>
+            <DropShadow color="#9a9696" />
+         </effect>
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="95.0" layoutX="27.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/act2.jpg" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="79.0" text="quad tour" textFill="#2262c6">
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="688.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/notification-bell.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="720.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/profile.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
